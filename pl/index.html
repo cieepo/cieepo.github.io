@@ -18,17 +18,18 @@
   <div class="box"><strong>W trakcie tworzenia.</strong> JARVIS nie jest jeszcze gotowym asystentem. Nie jest dostępny do pobrania ani do rejestracji. Poniższe sekcje oddzielają to, co przetestowano, od tego, co jest tylko planowane.</div>
 
   <h2>Dotychczas przetestowane</h2>
-  <p>Techniczne testy elementów składowych. Żaden z nich nie dotyczy danych użytkownika Google.</p>
+  <p>Techniczne testy elementów składowych. Żaden z nich nie czyta ani nie wysyła wiadomości e-mail.</p>
   <ul>
     <li>Bezpieczny dostęp z telefonu twórcy do serwera domowego przez szyfrowaną sieć prywatną.</li>
     <li>Rozpoznawanie mowy działające lokalnie na serwerze domowym.</li>
     <li>Techniczne połączenie z modelami Claude firmy Anthropic.</li>
     <li>Powiadomienia push na telefonie twórcy.</li>
+    <li>Zalogowanie własnym kontem Google twórcy i codzienna kontrola, że token dostępu nadal działa (czyta tylko podstawowy profil Gmail, żadnych wiadomości).</li>
   </ul>
 
   <h2>Następny test (w przygotowaniu, jeszcze niewykonany)</h2>
   <ul>
-    <li>Zalogowanie własnym kontem Google twórcy i wysłanie jednej wiadomości testowej na własny adres twórcy.</li>
+    <li>Wysłanie jednej wiadomości testowej na własny adres twórcy.</li>
   </ul>
 
   <h2>Planowane – jeszcze nie działa</h2>
@@ -41,7 +42,7 @@
   </ul>
 
   <h2>Dane użytkownika Google</h2>
-  <p>JARVIS będzie prosił o dostęp do własnego konta Gmail twórcy (zakresy Gmail API <code>gmail.modify</code> i <code>gmail.send</code>), aby zapewnić planowane funkcje poczty. Dane użytkownika Google będą używane wyłącznie do świadczenia tych funkcji właścicielowi konta. Nie są sprzedawane, nie służą do reklam i nie służą do trenowania modeli AI. <a href="privacy/">Polityka prywatności</a> opisuje dokładnie, dokąd dane trafiają i jak można je usunąć.</p>
+  <p>Twórca zalogował się do JARVIS własnym kontem Google i przyznał mu dostęp do własnego konta Gmail (zakresy Gmail API <code>gmail.modify</code> i <code>gmail.send</code>). Na razie ten dostęp służy wyłącznie do codziennej kontroli, że nadal działa, która czyta podstawowy profil i żadnych wiadomości. Uprawnienia mają zapewnić planowane funkcje poczty. Dane użytkownika Google będą używane wyłącznie do świadczenia tych funkcji właścicielowi konta. Nie są sprzedawane, nie służą do reklam i nie służą do trenowania modeli AI. <a href="privacy/">Polityka prywatności</a> opisuje dokładnie, dokąd dane trafiają i jak można je usunąć.</p>
   <p>Wykorzystanie informacji uzyskanych z interfejsów API Google przez JARVIS będzie zgodne z <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Google API Services User Data Policy</a>, w tym z wymaganiami Limited Use.</p>
 
   <h2>Kontakt</h2>
