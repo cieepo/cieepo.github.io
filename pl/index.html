@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JARVIS – prywatny asystent osobisty</title>
+<meta name="description" content="JARVIS to prywatna aplikacja asystenta dla jednego użytkownika, w trakcie tworzenia, zbudowana jako narzędzie do własnego użytku osobistego i zawodowego jej twórcy.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="./" style="text-decoration:none;color:inherit">JARVIS</a>
+  <nav><a href="privacy/">Polityka prywatności</a> <a href="../">English</a></nav>
+</header>
+<main>
+  <h1>JARVIS – prywatny asystent osobisty</h1>
+  <p>JARVIS to prywatny asystent osobisty zbudowany i obsługiwany przez jedną osobę, Jonatan, jako narzędzie do własnego użytku osobistego i zawodowego. Działa na komputerze w domu twórcy i jest używany z jego własnego telefonu i komputera. Nie jest usługą publiczną i nie jest oferowany innym osobom.</p>
+  <div class="box"><strong>W trakcie tworzenia.</strong> JARVIS nie jest jeszcze gotowym asystentem. Nie jest dostępny do pobrania ani do rejestracji. Poniższe sekcje oddzielają to, co przetestowano, od tego, co jest tylko planowane.</div>
+
+  <h2>Dotychczas przetestowane</h2>
+  <p>Techniczne testy elementów składowych. Żaden z nich nie dotyczy danych użytkownika Google.</p>
+  <ul>
+    <li>Bezpieczny dostęp z telefonu twórcy do serwera domowego przez szyfrowaną sieć prywatną.</li>
+    <li>Rozpoznawanie mowy działające lokalnie na serwerze domowym.</li>
+    <li>Techniczne połączenie z modelami Claude firmy Anthropic.</li>
+    <li>Powiadomienia push na telefonie twórcy.</li>
+  </ul>
+
+  <h2>Następny test (w przygotowaniu, jeszcze niewykonany)</h2>
+  <ul>
+    <li>Zalogowanie własnym kontem Google twórcy i wysłanie jednej wiadomości testowej na własny adres twórcy.</li>
+  </ul>
+
+  <h2>Planowane – jeszcze nie działa</h2>
+  <p>To funkcje, które JARVIS jest budowany, aby zapewniać. <strong>Nie są jeszcze dostępne</strong>:</p>
+  <ul>
+    <li><strong>Poczta</strong> – za wyraźną zgodą udzieloną przez logowanie Google: wyszukiwanie i streszczanie własnych wiadomości Gmail twórcy, przygotowywanie szkiców odpowiedzi oraz wysyłanie lub porządkowanie wiadomości <em>wyłącznie na polecenie twórcy</em>.</li>
+    <li><strong>Kalendarz, zadania i notatki</strong> – planowanie dnia, lista zadań i notatki, przypomnienia o terminach.</li>
+    <li><strong>Rozmowa i głos</strong> – rozmowa z asystentem tekstem lub głosem, z odpowiedziami generowanymi przez modele Claude i odpowiedziami mówionymi z usługi zamiany tekstu na mowę.</li>
+    <li>Szyfrowane kopie zapasowe własnych danych aplikacji.</li>
+  </ul>
+
+  <h2>Dane użytkownika Google</h2>
+  <p>JARVIS będzie prosił o dostęp do własnego konta Gmail twórcy (zakresy Gmail API <code>gmail.modify</code> i <code>gmail.send</code>), aby zapewnić planowane funkcje poczty. Dane użytkownika Google będą używane wyłącznie do świadczenia tych funkcji właścicielowi konta. Nie są sprzedawane, nie służą do reklam i nie służą do trenowania modeli AI. <a href="privacy/">Polityka prywatności</a> opisuje dokładnie, dokąd dane trafiają i jak można je usunąć.</p>
+  <p>Wykorzystanie informacji uzyskanych z interfejsów API Google przez JARVIS będzie zgodne z <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Google API Services User Data Policy</a>, w tym z wymaganiami Limited Use.</p>
+
+  <h2>Kontakt</h2>
+  <p><a href="mailto:peciojonatan@gmail.com">peciojonatan@gmail.com</a></p>
+</main>
+<footer>
+  <p class="muted"><a href="privacy/">Polityka prywatności</a> · <a href="../">English</a></p>
+</footer>
+</body>
+</html>

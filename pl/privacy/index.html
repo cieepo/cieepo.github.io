@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JARVIS – Polityka prywatności</title>
+<meta name="description" content="Polityka prywatności JARVIS, prywatnej aplikacji asystenta dla jednego użytkownika, w trakcie tworzenia: do jakich danych Google będzie miała dostęp, dokąd trafią dane oraz jak cofnąć dostęp i usunąć dane.">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="../" style="text-decoration:none;color:inherit">JARVIS</a>
+  <nav><a href="../">Strona główna</a> <a href="../../privacy/">English</a></nav>
+</header>
+<main>
+  <h1>Polityka prywatności</h1>
+  <p class="muted">Obowiązuje od: 11 listopada 2026 · Dotyczy aplikacji JARVIS i tej strony. Wersja angielska (<a href="../../privacy/">English</a>) jest wersją referencyjną dla Google.</p>
+
+  <h2>1. Kto prowadzi JARVIS</h2>
+  <p>JARVIS to oprogramowanie napisane i obsługiwane przez jedną osobę, Jonatan („twórca”, „ja”), jako narzędzie do własnego użytku osobistego i zawodowego. Nie jest oferowane publicznie: jedyną osobą, której dane Google przetwarza, jest twórca, korzystający z własnych kont Google. Kontakt: <a href="mailto:peciojonatan@gmail.com">peciojonatan@gmail.com</a>.</p>
+
+  <h2>2. Co działa dziś, a co jest planowane</h2>
+  <div class="box"><strong>Na dzień wejścia w życie JARVIS nie przetwarza żadnych danych użytkownika Google</strong> i nie jest gotowym asystentem.
+    <ul>
+      <li><strong>Dotychczas przetestowane</strong> (testy techniczne, bez danych Google): bezpieczny dostęp z telefonu twórcy do serwera domowego przez szyfrowaną sieć prywatną; rozpoznawanie mowy działające lokalnie na serwerze; techniczne połączenie z modelami Claude firmy Anthropic; powiadomienia push na telefonie twórcy.</li>
+      <li><strong>Następny test (w przygotowaniu, jeszcze niewykonany):</strong> zalogowanie własnym kontem Google twórcy i wysłanie jednej wiadomości testowej na własny adres twórcy.</li>
+      <li><strong>Planowane, jeszcze nie działa:</strong> wyszukiwanie i streszczanie wiadomości Gmail, przygotowywanie szkiców, wysyłanie lub porządkowanie wiadomości na polecenie twórcy; planowanie kalendarza i zadań; odpowiedzi głosowe; interfejs rozmowy; szyfrowane kopie zapasowe.</li>
+    </ul>
+    Ta polityka opisuje, jak dane użytkownika Google <em>będą</em> przetwarzane po przyznaniu dostępu. Nie będą używane w żaden inny sposób. Jeśli plany się zmienią, polityka zostanie najpierw zaktualizowana, a nowe użycie nie rozpocznie się wcześniej.
+  </div>
+
+  <h2>3. Do jakich danych Google JARVIS będzie miał dostęp i po co</h2>
+  <p>JARVIS uzyskuje dostęp do konta Google dopiero po zalogowaniu właściciela konta na ekranie zgody Google i przyznaniu następujących uprawnień (zakresy Gmail API):</p>
+  <table>
+    <tr><th>Uprawnienie (zakres)</th><th>Użycie</th></tr>
+    <tr><td><code>https://www.googleapis.com/auth/gmail.modify</code></td><td><em>Planowane:</em> odczyt własnych wiadomości i wątków konta, nagłówków i etykiet na żądanie; wyszukiwanie; pobranie treści wiadomości, aby ją streścić lub odpowiedzieć; tworzenie szkiców; nadawanie etykiet, archiwizacja lub przeniesienie do kosza na prośbę właściciela konta.</td></tr>
+    <tr><td><code>https://www.googleapis.com/auth/gmail.send</code></td><td><em>Planowane:</em> wysłanie wiadomości <em>wyłącznie</em> na polecenie właściciela konta. <em>Następny test:</em> jedna wiadomość testowa na własny adres właściciela konta.</td></tr>
+    <tr><td>Podstawowy profil (adres e-mail)</td><td>Rozpoznanie, która skrzynka jest podłączona, i pokazanie jej w aplikacji.</td></tr>
+  </table>
+  <p>JARVIS nie będzie czytał poczty w celu profilowania właściciela konta. Obecnie nie prosi o żadne inne uprawnienia Google; jeśli kiedyś to zrobi (np. do kalendarza lub kontaktów), polityka zostanie zaktualizowana wcześniej, a nowy dostęp nie rozpocznie się przed tym. Wiadomości mogą zawierać dane osobowe osób, które napisały do właściciela konta; są one przetwarzane wyłącznie po to, aby zapewnić powyższe funkcje właścicielowi konta.</p>
+  <p><strong>Co będzie przechowywane</strong> (gdy funkcje zaczną działać): tokeny OAuth (zob. pkt 7), identyfikatory i nagłówki wiadomości oraz wątków potrzebne do ich odnalezienia i wskazywania, szkice i kopie wiadomości wysłanych przez sam JARVIS oraz tekst rozmowy z asystentem, który może zawierać fragmenty wiadomości będących częścią polecenia. Pełny tekst wiadomości ma być pobierany wtedy, gdy jest potrzebny do polecenia, i nie ma być przechowywany jako osobne archiwum poczty.</p>
+
+  <h2>4. Dokąd trafiają dane (gdy funkcje zaczną działać)</h2>
+  <table>
+    <tr><th>Odbiorca</th><th>Co jest wysyłane</th><th>Stan na dzień wejścia w życie</th></tr>
+    <tr><td>Serwer domowy twórcy (komputer będący własnością i pod kontrolą twórcy), do którego telefon i komputer twórcy łączą się przez szyfrowaną sieć prywatną (oparta na WireGuard, dostarczana przez NetBird) po uwierzytelnieniu</td><td>Dane pobrane z Google przez HTTPS i własne dane aplikacji</td><td>Dostęp prywatny przetestowany; jeszcze bez danych Google</td></tr>
+    <tr><td>Anthropic (modele Claude), zob. pkt 5</td><td>Polecenie twórcy i wyłącznie fragmenty potrzebne do niego</td><td>Połączenie techniczne przetestowane; nigdy jeszcze z danymi Google</td></tr>
+    <tr><td>ElevenLabs (zamiana tekstu na mowę)</td><td>Tekst odpowiedzi, którą twórca poprosił odczytać; samo rozpoznawanie mowy odbywa się lokalnie, a nagrania nie są wysyłane do osób trzecich</td><td>Planowane, jeszcze nie działa</td></tr>
+    <tr><td>Apple (powiadomienia push)</td><td>Krótki tekst powiadomienia; domyślna treść jest ogólna</td><td>Powiadomienia testowe działały; jeszcze bez danych Google</td></tr>
+    <tr><td>Własna chmura twórcy</td><td>Szyfrowane kopie zapasowe bazy aplikacji (zaszyfrowane przed wysłaniem)</td><td>Planowane, jeszcze nie działa</td></tr>
+  </table>
+  <p>Żadne dane użytkownika Google nie są sprzedawane, wynajmowane, przekazywane brokerom danych ani platformom reklamowym ani używane do jakichkolwiek reklam. Nikt poza twórcą nie czyta tych danych, z wyjątkiem sytuacji wymaganych prawem albo badania nadużyć lub incydentów bezpieczeństwa.</p>
+
+  <h2>5. Anthropic i przetwarzanie przez AI</h2>
+  <p>JARVIS korzysta z modeli Claude firmy Anthropic przez Claude Agent SDK, zalogowany na własną subskrypcję Claude twórcy. Anthropic przetwarza otrzymany tekst na podstawie własnych <a href="https://www.anthropic.com/legal/consumer-terms">Consumer Terms of Service</a> i <a href="https://www.anthropic.com/legal/privacy">Privacy Policy</a>.</p>
+  <ul>
+    <li><strong>Zasada dotycząca trenowania.</strong> Anthropic pozwala właścicielom kont wybrać, czy ich rozmowy mogą być używane do ulepszania modeli Claude (<a href="https://code.claude.com/docs/en/data-usage">dokumentacja Anthropic o wykorzystaniu danych</a>). Zasada twórcy dla JARVIS: <em>JARVIS nie zostanie połączony z żadnym kontem Google, a żadne dane użytkownika Google nie zostaną wysłane do Claude, dopóki to ustawienie nie zostanie wyłączone, i tylko tak długo, jak pozostaje wyłączone.</em> Sam JARVIS nie używa danych użytkownika Google do tworzenia, ulepszania ani trenowania żadnego uogólnionego ani niespersonalizowanego modelu AI/ML i nie przekazuje ich nikomu w tym celu.</li>
+    <li><strong>Wyjątki poza kontrolą JARVIS.</strong> Według opublikowanej dokumentacji Anthropic część treści może być używana lub przechowywana przez Anthropic nawet przy wyłączonym ustawieniu: treści oznaczone przez Anthropic do przeglądu bezpieczeństwa oraz treści, które użytkownik wyraźnie zgłosi jako opinię (np. poleceniem opinii lub kciukiem w górę/w dół; transkrypty przesłane poleceniami opinii są udokumentowane jako przechowywane przez 5 lat). Twórca nie będzie przesyłał opinii o rozmowach zawierających dane użytkownika Google. Ponieważ oznaczenie do przeglądu bezpieczeństwa zależy od Anthropic i nie można go wykluczyć, JARVIS wysyła do Claude tylko to, czego wymaga polecenie.</li>
+    <li><strong>Przechowywanie u Anthropic.</strong> Przy wyłączonym ustawieniu Anthropic dokumentuje 30-dniowy okres przechowywania dla kont konsumenckich i podaje, że usunięte rozmowy są usuwane z jego zaplecza w ciągu 30 dni (dokumentacja odczytana 11 listopada 2026; aktualne zasady sprawdź na podlinkowanych stronach).</li>
+    <li><strong>Minimalizacja.</strong> JARVIS nie wysyła poświadczeń, tokenów ani całych skrzynek.</li>
+  </ul>
+
+  <h2>6. Limited Use danych użytkownika Google</h2>
+  <p>Wykorzystanie informacji uzyskanych z zakresów Google Workspace (Gmail API) będzie zgodne z <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Google API Services User Data Policy</a>, w tym z wymaganiami Limited Use, oraz z <a href="https://developers.google.com/workspace/gmail/api/policy">Google Workspace User Data and Developer Policy</a>. W szczególności:</p>
+  <ul>
+    <li>Dane użytkownika Google są używane wyłącznie do świadczenia i ulepszania funkcji opisanych w tej polityce, widocznych w aplikacji, na rzecz właściciela konta.</li>
+    <li>Są przekazywane innym podmiotom wyłącznie w sposób opisany w pkt 4, aby zapewnić te funkcje na żądanie właściciela konta, ze względów bezpieczeństwa, dla zgodności z prawem albo w ramach fuzji lub sprzedaży za uprzednią zgodą właściciela konta.</li>
+    <li>Nie są używane do reklam, nie są sprzedawane i nie służą do oceny zdolności kredytowej ani udzielania pożyczek.</li>
+    <li>Ludzie ich nie czytają, z wyjątkiem właściciela konta, za jego zgodą w odniesieniu do konkretnych danych, ze względów bezpieczeństwa albo gdy wymaga tego prawo.</li>
+    <li>Nie służą do tworzenia, trenowania ani ulepszania uogólnionych modeli AI/ML.</li>
+  </ul>
+
+  <h2>7. Przechowywanie i bezpieczeństwo</h2>
+  <ul>
+    <li>Tokeny dostępu i odświeżania OAuth są przechowywane zaszyfrowane (ochrona danych systemu operacyjnego powiązana z kontem użytkownika na serwerze). Dane są przesyłane wyłącznie szyfrowanymi połączeniami.</li>
+    <li>Serwer działa na oddzielnych, ograniczonych kontach systemu operacyjnego; aplikacja komunikująca się z AI nie może zmieniać własnych plików programu.</li>
+    <li>Przechowywane dane są trzymane tylko tak długo, jak twórca używa JARVIS z danym kontem Google, i są usuwane w sposób opisany w pkt 8.</li>
+  </ul>
+
+  <h2>8. Cofnięcie dostępu i usunięcie danych</h2>
+  <ul>
+    <li><strong>Cofnięcie dostępu Google</strong> w dowolnej chwili w Koncie Google: <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> → JARVIS → Usuń dostęp. Od tej chwili JARVIS nie może czytać ani wysyłać poczty z tego konta, bo zapisany token przestaje działać.</li>
+    <li><strong>Usuwanie jest obecnie ręczne.</strong> JARVIS nie usuwa jeszcze danych automatycznie po cofnięciu dostępu. Po cofnięciu dostępu albo po prośbie wysłanej na adres kontaktowy powyżej twórca usuwa ręcznie, na serwerze domowym: (1) zaszyfrowany plik tokenu tego konta; (2) zapisane identyfikatory i nagłówki wiadomości i wątków, szkice, kopie wysłanych wiadomości i wpisy historii rozmów związane z tym kontem; (3) te same dane w każdej kopii zapasowej, gdy kopie będą istniały. Twórca robi to bez zbędnej zwłoki, a w każdym razie w ciągu 30 dni, i na prośbę potwierdza e-mailem.</li>
+    <li>Dane już wysłane do Anthropic lub ElevenLabs podlegają ich zasadom przechowywania (dla Anthropic zob. pkt 5); twórca nie może ich usunąć wcześniej, niż przewidują te zasady.</li>
+    <li>Automatyczne usuwanie jest planowane. Ta polityka zostanie zaktualizowana, gdy powstanie.</li>
+  </ul>
+
+  <h2>9. Ta strona</h2>
+  <p>Ta strona to statyczna strona informacyjna hostowana w GitHub Pages. Nie ma kont, formularzy, plików cookie ani analityki. Jako dostawca hostingu GitHub może przetwarzać dane techniczne odwiedzających (np. adres IP) zgodnie z <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">własnym oświadczeniem o prywatności</a>.</p>
+
+  <h2>10. Dzieci</h2>
+  <p>JARVIS nie jest skierowany do dzieci i nie jest oferowany nikomu poza jego twórcą.</p>
+
+  <h2>11. Zmiany</h2>
+  <p>Jeśli zmieni się sposób wykorzystania danych użytkownika Google przez JARVIS, polityka zostanie najpierw zaktualizowana, zmieni się data obowiązywania powyżej, a nowe użycie nie rozpocznie się przed opublikowaniem aktualizacji.</p>
+
+  <h2>12. Kontakt</h2>
+  <p>Jonatan · <a href="mailto:peciojonatan@gmail.com">peciojonatan@gmail.com</a></p>
+</main>
+<footer>
+  <p class="muted"><a href="../">Strona główna</a> · <a href="../../privacy/">English</a></p>
+</footer>
+</body>
+</html>
